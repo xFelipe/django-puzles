@@ -6,11 +6,18 @@
 </head>
 <body>
 <h1>Puzle Diamonds</h1>
-
+{% if messages %}
+    {% for message in messages %}
+        <div>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 <form action="" method="post">
     {% csrf_token %}
     {{ form }}
         <input type="submit" value="Submit">
+    <p><a href="/"><input type="button" value="Voltar"></a></p>
 </form>
 </body>
 </html>
